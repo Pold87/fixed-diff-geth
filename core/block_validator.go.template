@@ -266,10 +266,10 @@ func ValidateHeader(config *params.ChainConfig, pow pow.PoW, header *types.Heade
 func CalcDifficulty(config *params.ChainConfig, time, parentTime uint64, parentNumber, parentDiff *big.Int) *big.Int {
 	if config.IsHomestead(new(big.Int).Add(parentNumber, common.Big1)) {
 //		return calcDifficultyHomestead(time, parentTime, parentNumber, parentDiff)
-		return big.NewInt(150000)	     
+		return big.NewInt(MININGDIFF)	     
 	} else {
 //		return calcDifficultyFrontier(time, parentTime, parentNumber, parentDiff)
-		return big.NewInt(150000)	    
+		return big.NewInt(MININGDIFF)	    
 	}
 }
 

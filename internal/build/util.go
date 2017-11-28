@@ -81,7 +81,7 @@ var warnedAboutGit bool
 // RunGit runs a git subcommand and returns its output.
 // The command must complete successfully.
 func RunGit(args ...string) string {
-	cmd := exec.Command("git", args...)
+	cmd := exec.Command("/home/afranzin/software/bin/bin/git", args...)
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout, cmd.Stderr = &stdout, &stderr
 	if err := cmd.Run(); err == exec.ErrNotFound {

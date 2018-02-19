@@ -139,7 +139,7 @@ func newWorker(config *params.ChainConfig, engine consensus.Engine, coinbase com
 		coinbase:       coinbase,
 		txQueue:        make(map[common.Hash]*types.Transaction),
 		agents:         make(map[Agent]struct{}),
-		unconfirmed:    newUnconfirmedBlocks(eth.BlockChain(), 5),
+		unconfirmed:    newUnconfirmedBlocks(eth.BlockChain(), 0),
 		fullValidation: false,
 	}
 	worker.events = worker.mux.Subscribe(core.ChainHeadEvent{}, core.ChainSideEvent{}, core.TxPreEvent{})
